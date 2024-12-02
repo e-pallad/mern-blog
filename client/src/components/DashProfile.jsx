@@ -21,14 +21,15 @@ export default function DashProfile() {
   const { currentUser } = useSelector((state) => state.user);
   const [imageFile, setImageFile] = useState(null);
   const [imageFileUrl, setImageFileUrl] = useState(null);
-  const [formData, setFormData] = useState({});
-  const filePickerRef = useRef();
-  const dispatch = useDispatch();
-  const [imageFileUploadProgress, setImageFileUploadProgress] = useState(0);
+  const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
   const [imageFileUploadError, setImageFileUploadError] = useState(null);
   const [imageFileUploading, setImageFileUploading] = useState(false);
   const [updateUserSuccess, setUpdateUserSuccess] = useState(null);
   const [updateUserError, setUpdateUserError] = useState(null);
+  const [formData, setFormData] = useState({});
+  const filePickerRef = useRef();
+  const dispatch = useDispatch();
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -101,12 +102,12 @@ export default function DashProfile() {
         dispatch(updateFailure(data.message));
         setUpdateUserError(data.message);
       } else {
-        dispatch.apply(updateSuccess(data));
-        setUpdateUserSuccess("Profile updated succesfully");
+        dispatch(updateSuccess(data));
+        setUpdateUserSuccess("User's profile updated successfully");
       }
     } catch (error) {
       dispatch(updateFailure(error.message));
-      setUpdateUserError(data.message);
+      setUpdateUserError(error.message);
     }
   };
   return (
