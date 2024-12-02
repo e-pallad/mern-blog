@@ -1,9 +1,4 @@
-import {
-  Footer,
-  FooterCopyright,
-  FooterLinkGroup,
-  FooterTitle,
-} from "flowbite-react";
+import { Footer, FooterLinkGroup } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { BsFacebook, BsInstagram, BsGithub } from "react-icons/bs";
 

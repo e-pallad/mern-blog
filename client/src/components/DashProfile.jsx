@@ -75,7 +75,7 @@ export default function DashProfile() {
         >
           {imageFileUploadProgress && (
             <CircularProgressbar
-              value={imageFileUploadProgress || 0}
+              value={imageFileUploadProgress || null}
               text={`${imageFileUploadProgress}%`}
               strokeWidth={5}
               styles={{
