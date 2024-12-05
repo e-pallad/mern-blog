@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import {} from "react";
 import DashSidebar from "../components/DashSidebar";
 import DashProfile from "../components/DashProfile";
 
